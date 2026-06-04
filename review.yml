@@ -1,0 +1,55 @@
+---
+name: National Cheng Kung University
+description: National Cheng Kung University public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/ncku/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      NCKU has no single consolidated developer portal, but it operates real,
+      live machine-readable interfaces. The CKAN open data platform was verified
+      live returning valid CKAN Action API JSON (150+ dataset IDs from
+      package_list). The library discovery layer runs on Ex Libris Primo/Alma
+      and the institutional repository on DSpace 7, both verified live. No
+      NCKU-branded API key program or developer docs were found, and a working
+      OAI-PMH/REST base URL for the DSpace repository did not resolve at probe
+      time, so it was not asserted. No endpoints were fabricated.
+    endpoints:
+      - url: https://data.ncku.edu.tw/
+        status: 200
+        note: CKAN open data platform homepage, live.
+      - url: https://data.ncku.edu.tw/api/3/action/package_list
+        status: 200
+        note: CKAN Action API returns valid JSON with 150+ dataset identifiers.
+      - url: https://web.ncku.edu.tw/index.php?Lang=en
+        status: 200
+        note: Official English university website.
+      - url: https://www.ncku.edu.tw/
+        status: 200
+        note: Primary institutional domain, live.
+      - url: https://i.ncku.edu.tw/en
+        status: 200
+        note: Cheng-Kung Portal (campus service portal), live.
+      - url: https://www.lib.ncku.edu.tw/
+        status: 200
+        note: NCKU Library site; references Ex Libris Primo/Alma.
+      - url: https://ncku.primo.exlibrisgroup.com/discovery/search?vid=886NCKU_INST:NCKU
+        status: 200
+        note: Ex Libris Primo discovery view for NCKU, live.
+      - url: https://nckur.lib.ncku.edu.tw/
+        status: 200
+        note: DSpace 7 institutional repository (NCKUR), live.
+      - url: http://nckur.lib.ncku.edu.tw/dspace-oai/request?verb=Identify
+        status: 0
+        note: Candidate DSpace OAI-PMH endpoint did not resolve; not asserted.
+      - url: https://github.com/ncku-csie
+        status: 200
+        note: Dept. of CSIE GitHub org, live (academic, not central API org).
+      - url: https://github.com/gdsc-ncku
+        status: 404
+        note: GDSC NCKU GitHub org not found at this slug; not cataloged.
+      - url: https://www.linkedin.com/school/national-cheng-kung-university/
+        status: 999
+        note: LinkedIn returns 999 (bot block); school page exists.

@@ -1,0 +1,91 @@
+---
+aid: ncku
+name: National Cheng Kung University
+description: >-
+  National Cheng Kung University (NCKU) is a public research university based in
+  Tainan, Taiwan, ranked #215 in the QS World University Rankings 2025. Its
+  public, machine-readable footprint centers on a CKAN-powered open data
+  platform that exposes the standard CKAN Action API, an Ex Libris Primo/Alma
+  library discovery layer, and a DSpace 7 institutional repository. NCKU does
+  not operate a single consolidated developer portal; the cataloged interfaces
+  below are platform-standard APIs confirmed live rather than bespoke,
+  documented university APIs.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/ncku/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Open Data
+  - Library
+  - Taiwan
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: ncku:opendata
+    name: NCKU Open Data Platform (CKAN Action API)
+    description: >-
+      NCKU's open data platform is built on CKAN and exposes the standard CKAN
+      Action API. Endpoints such as /api/3/action/package_list and
+      /api/3/action/package_show return JSON catalogs of the university's
+      published datasets. Verified live returning valid CKAN JSON with 150+
+      dataset identifiers. Data is published under the Open Government Data
+      License (OGDL-Taiwan-1.0).
+    humanURL: https://data.ncku.edu.tw/
+    baseURL: https://data.ncku.edu.tw/api/3/action
+    tags: [ Open Data, CKAN, Datasets, JSON ]
+    properties:
+      - type: Documentation
+        url: https://docs.ckan.org/en/latest/api/
+      - type: DeveloperPortal
+        url: https://data.ncku.edu.tw/
+  - aid: ncku:primo
+    name: NCKU Library Discovery (Ex Libris Primo)
+    description: >-
+      The NCKU Library catalog and discovery service runs on Ex Libris Primo
+      backed by an Alma library services platform. Primo deployments expose a
+      REST/JSON discovery layer (Primo VE) used by the public search interface.
+      Verified live at the institution's Primo discovery view; no NCKU-specific
+      developer documentation or API key program was found publicly.
+    humanURL: https://www.lib.ncku.edu.tw/
+    tags: [ Library, Primo, Alma, Discovery ]
+    properties:
+      - type: Documentation
+        url: https://ncku.primo.exlibrisgroup.com/discovery/search?vid=886NCKU_INST:NCKU
+  - aid: ncku:ir
+    name: NCKU Institutional Repository (DSpace 7)
+    description: >-
+      The NCKU institutional repository (NCKUR) is a DSpace 7 platform hosting
+      university scholarly output and theses. DSpace 7 ships a REST API and
+      OAI-PMH harvesting interface; the repository homepage advertises RSS feeds.
+      Repository verified live, but a working OAI-PMH/REST base URL was not
+      confirmed to resolve at probe time, so no baseURL is asserted here.
+    humanURL: https://nckur.lib.ncku.edu.tw/
+    tags: [ Institutional Repository, DSpace, OAI-PMH, Research ]
+    properties:
+      - type: Documentation
+        url: https://nckur.lib.ncku.edu.tw/
+common:
+  - type: Website
+    url: https://web.ncku.edu.tw/index.php?Lang=en
+  - type: DeveloperPortal
+    url: https://data.ncku.edu.tw/
+  - type: GitHub
+    url: https://github.com/ncku-csie
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/national-cheng-kung-university/
+  - type: Plans
+    url: plans/ncku-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/ncku-rate-limits.yml
+  - type: FinOps
+    url: finops/ncku-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
