@@ -1,0 +1,58 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "ncku": "https://data.ncku.edu.tw/ns#",
+    "schema": "https://schema.org/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "CollegeOrUniversity": "schema:CollegeOrUniversity",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "foundingDate": "schema:foundingDate",
+    "address": "schema:address",
+    "location": "schema:location",
+    "sameAs": "schema:sameAs",
+    "Dataset": "schema:Dataset",
+    "DataCatalog": "schema:DataCatalog",
+    "dataset": "schema:dataset",
+    "distribution": "schema:distribution",
+    "DataDownload": "schema:DataDownload",
+    "contentUrl": "schema:contentUrl",
+    "encodingFormat": "schema:encodingFormat",
+    "license": "schema:license",
+    "publisher": "schema:publisher",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "keywords": "schema:keywords",
+    "identifier": "schema:identifier",
+    "spatialCoverage": "schema:spatialCoverage",
+    "temporalCoverage": "schema:temporalCoverage",
+    "creativeWorkStatus": "schema:creativeWorkStatus"
+  },
+  "@type": "CollegeOrUniversity",
+  "@id": "https://web.ncku.edu.tw/",
+  "name": "National Cheng Kung University",
+  "url": "https://web.ncku.edu.tw/index.php?Lang=en",
+  "description": "National Cheng Kung University (NCKU) is a public research university based in Tainan, Taiwan. Its public, machine-readable footprint centers on a CKAN-powered open data platform, an Ex Libris Primo/Alma library discovery layer, and a DSpace 7 institutional repository.",
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tainan",
+      "addressCountry": "TW"
+    }
+  },
+  "sameAs": [
+    "https://www.linkedin.com/school/national-cheng-kung-university/",
+    "https://github.com/ncku-csie"
+  ],
+  "subjectOf": {
+    "@type": "DataCatalog",
+    "@id": "https://data.ncku.edu.tw/",
+    "name": "NCKU Open Data Platform",
+    "url": "https://data.ncku.edu.tw/",
+    "description": "CKAN-powered open data catalog exposing the standard CKAN Action API at /api/3/action.",
+    "license": "https://data.gov.tw/license"
+  }
+}
