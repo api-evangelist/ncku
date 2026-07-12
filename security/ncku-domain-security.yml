@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: web.ncku.edu.tw
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jul 31 23:59:59 2026 GMT
+  hsts: null
+- host: data.ncku.edu.tw
+  https: true
+  tls_cert_error: '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject
+    Key Identifier (_ssl.c:1082)'
+  hsts: null
+- host: www.lib.ncku.edu.tw
+  https: true
+  tls_cert_error: '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject
+    Key Identifier (_ssl.c:1082)'
+  hsts: null
+domains:
+- domain: ncku.edu.tw
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

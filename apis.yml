@@ -70,6 +70,8 @@ apis:
       - type: Documentation
         url: https://nckur.lib.ncku.edu.tw/
 common:
+  - type: DomainSecurity
+    url: security/ncku-domain-security.yml
   - type: Website
     url: https://web.ncku.edu.tw/index.php?Lang=en
   - type: DeveloperPortal
