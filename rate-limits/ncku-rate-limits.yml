@@ -4,18 +4,23 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: National Cheng Kung University
 providerId: ncku
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 reconciled: false
+generated: '2026-09-01'
+method: derived
+source: apis.yml + live probes of data.ncku.edu.tw on 2026-09-01
 tags:
 - Education
 - Higher Education
 - University
 - Rate Limiting
 description: >-
-  National Cheng Kung University does not publish a unified public rate-limit table across its APIs. Open
-  metadata and harvesting endpoints (OAI-PMH, IIIF, library) may throttle large-scale
-  or automated harvesting; clients should harvest politely, honor Retry-After, and
-  contact the relevant service for bulk access.
+  National Cheng Kung University publishes no rate-limit table for any of its surfaces. The one
+  institution-operated machine-readable endpoint verified on 2026-09-01 — the CKAN Action API at
+  data.ncku.edu.tw — answered anonymous calls without throttling and declares no documented limit;
+  data.ncku.edu.tw/robots.txt asks crawlers for a 10-second delay and disallows /api/, which is a
+  politeness directive rather than an enforced control. No OAI-PMH, IIIF or library harvesting
+  endpoint was reachable, so no limit is asserted for any of them.
 notes: Confirm per-service limits with each API's documentation; harvest responsibly.
 sources:
 - https://raw.githubusercontent.com/api-evangelist/ncku/refs/heads/main/apis.yml

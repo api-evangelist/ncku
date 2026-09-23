@@ -3,7 +3,7 @@ name: National Cheng Kung University
 description: National Cheng Kung University public developer/API footprint review for APIs.json cataloging.
 url: https://raw.githubusercontent.com/api-evangelist/ncku/refs/heads/main/review.yml
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 reviews:
   - date: '2026-06-03'
     rating: 3
@@ -53,3 +53,72 @@ reviews:
       - url: https://www.linkedin.com/school/national-cheng-kung-university/
         status: 999
         note: LinkedIn returns 999 (bot block); school page exists.
+  - date: '2026-09-01'
+    rating: 2
+    summary: >-
+      Re-profiled under the university pipeline, which settles WHO OPERATES each surface before
+      saving anything. Three corrections to the 2026-06 review. (1) Library discovery was recorded
+      against NCKU's own library host; it is not NCKU's service. Every discovery, account and course
+      reserves link on www.lib.ncku.edu.tw points at ncku.primo.exlibrisgroup.com with view
+      886NCKU_INST, an institution-specific view on Ex Libris's shared Primo VE platform. Re-labelled
+      x-operator tenant; no Ex Libris contract is saved under NCKU's name. (2) The institutional
+      repository was recorded as live at 200; it is real and it is NCKU's DSpace, but the host
+      refused TCP on 443 and 80 on most of roughly thirty attempts. Three responsive windows were
+      enough to confirm "Powered By DSPACE, MIT" Version 7.0 on nginx/1.18.0 and handle prefix
+      987654321, and to establish that /oai/request?verb=Identify is a genuine application 404. The
+      DSpace REST and OAI-PMH claims remain unverified and are not asserted. (3) package_list now
+      returns 108 dataset identifiers, not the 150+ recorded in June. Added: NCKU's ROR registration
+      01b8kcc49 as a registry membership, with the negative findings that api.datacite.org lists zero
+      clients and api.crossref.org zero members for NCKU, so it registers no DOI prefix with either.
+      idp.ncku.edu.tw resolves but answers on no port from outside Taiwan and Taiwan has no eduGAIN
+      federation, so the Shibboleth IdP is named as a lead, not credited as a surface. No OpenAPI is
+      saved: the CKAN Action API is CKAN's product contract shared by every CKAN site, and crediting
+      it to NCKU would be the same defect this pipeline exists to prevent. The rating drops because
+      the June profile counted a vendor's discovery service and an unconfirmed repository API as
+      NCKU's; the corrected footprint is one genuine open-data endpoint plus governance documents.
+    endpoints:
+      - url: https://data.ncku.edu.tw/api/3/action/status_show
+        status: 200
+        note: CKAN 2.0, site_title "National Cheng Kung University Open Data Platform", extensions include nckumetadata and nckutemplatehelper.
+      - url: https://data.ncku.edu.tw/api/3/action/package_list
+        status: 200
+        note: 108 dataset identifiers (June review recorded 150+).
+      - url: https://data.ncku.edu.tw/zh_TW/about
+        status: 200
+        note: Open Government Data License v1 (Taiwan), stated CC BY 4.0 compatible.
+      - url: https://data.ncku.edu.tw/llms.txt
+        status: 404
+        note: No llms.txt on the open data portal.
+      - url: https://ncku.primo.exlibrisgroup.com/discovery/search?vid=886NCKU_INST:886NCKU_INST&lang=zh-tw
+        status: 200
+        note: Primo VE Angular shell (primoExploreRoot); Ex Libris tenancy, not NCKU engineering.
+      - url: https://nckur.lib.ncku.edu.tw/
+        status: 200
+        note: Intermittent — 200/92896 on 3 of ~30 attempts; DSpace confirmed during a responsive window. One early fetch served a "Website Moved" interstitial to mytheses.my.
+      - url: https://nckur.lib.ncku.edu.tw/oai/request?verb=Identify
+        status: 404
+        note: Genuine application 404; this OAI-PMH path does not exist.
+      - url: https://idp.ncku.edu.tw/idp/shibboleth
+        status: 0
+        note: DNS resolves to 140.116.241.102 but nc port checks on 443 and 8443 time out. Presence is not proof; not credited.
+      - url: https://api.datacite.org/clients?query=cheng+kung
+        status: 200
+        note: Zero clients. NCKU is not a DataCite registrant.
+      - url: https://api.crossref.org/members?query=cheng+kung&rows=5
+        status: 200
+        note: Zero members. NCKU is not a Crossref member.
+      - url: https://api.ror.org/organizations/01b8kcc49
+        status: 200
+        note: ROR record for NCKU; fundref 501100007750, GRID grid.64523.36, ISNI 0000 0004 0532 3255, Wikidata Q706708.
+      - url: https://course.ncku.edu.tw/
+        status: 200
+        note: NCKU course information and enrollment system; institution-operated, HTML only, no API.
+      - url: https://hsm.ncku.edu.tw/var/file/199/1199/img/434977937.pdf
+        status: 200
+        note: NCKU generative-AI academic integrity guideline (國立成功大學生成式AI於教學研究的學術誠信指引), PDF.
+      - url: https://sites.google.com/gs.ncku.edu.tw/nckuaiguidance/
+        status: 200
+        note: NCKU AI and learning tools reference guide for students and faculty.
+      - url: https://github.com/ncku-csie
+        status: 200
+        note: Dept. of CSIE org, 56 public repos; departmental, not a central API org.

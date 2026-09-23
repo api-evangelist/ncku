@@ -6,6 +6,9 @@ providerId: ncku
 created: '2026-06-03'
 modified: '2026-06-03'
 reconciled: false
+generated: '2026-09-01'
+method: derived
+source: apis.yml — no usage-based API billing found
 tags:
 - Education
 - Higher Education

@@ -4,19 +4,24 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: National Cheng Kung University
 providerId: ncku
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 reconciled: false
+generated: '2026-09-01'
+method: derived
+source: apis.yml + data.ncku.edu.tw open-data terms page (OGDL Taiwan v1)
 tags:
 - Education
 - Higher Education
 - University
 - Plans
 description: >-
-  National Cheng Kung University is a non-commercial higher-education institution; its APIs are not sold
-  as a commercial product. Public APIs (library, repository, course, and open-metadata
-  interfaces) are offered free of charge, typically for non-commercial use. Most
-  administrative and identity APIs are not openly self-service and require institutional
-  affiliation, credentials, or federation membership rather than a paid plan.
+  National Cheng Kung University is a non-commercial public higher-education institution and sells no
+  API access. The one institution-operated machine-readable endpoint verified on 2026-09-01 — the
+  CKAN Action API at data.ncku.edu.tw — is free, anonymous and needs no key or registration, and its
+  data is released under Taiwan's Open Government Data License v1, which the portal states is
+  compatible with CC BY 4.0. Everything else on the estate is either a vendor tenancy priced to the
+  institution rather than to developers (Ex Libris Primo/Alma, RapidILL), or gated behind
+  institutional SSO. There is no developer portal, no API key program and no paid tier of any kind.
 notes: >-
   No published per-seat or per-call commercial pricing. "Free / Open" reflects open
   public endpoints; "Affiliation / Credentialed" reflects access gated by institutional
